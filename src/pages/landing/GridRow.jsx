@@ -1,14 +1,14 @@
 import React from 'react'
 import { Container, Image, Header } from 'semantic-ui-react'
 
-function GridRow(props) {
+function GridRow({ node }) {
     return (
         <Container>
             {
-                props.node.node.frontmatter.featuredImage ?
+                node?.node?.frontmatter?.featuredImage ?
                     <Image
                         size='medium'
-                        src={props.node.node.frontmatter.featuredImage.childImageSharp.fluid.src}
+                        src={node?.node?.frontmatter?.featuredImage.childImageSharp.fluid.src}
                     />
                     :
                     <Image
@@ -19,9 +19,9 @@ function GridRow(props) {
             }
             <Container>
                 <Header>
-                    {props.node.node.frontmatter.title}
+                    {node?.node?.frontmatter?.title}
                     <Header.Subheader>
-                        <b>{props.node.node.frontmatter.author}</b> on <b>{props.node.node.frontmatter.date}</b>
+                        <b>{node?.node?.frontmatter?.author}</b> on <b>{node?.node?.frontmatter?.date}</b>
                     </Header.Subheader>
                 </Header>
             </Container>

@@ -19,7 +19,6 @@
     "gatsby-transformer-remark": "^2.13.1",
     "gatsby-transformer-sharp": "^2.6.0",
     "lodash": "^4.17.20",
-    "medium-to-markdown": "0.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -28,6 +27,7 @@
     "semantic-ui-react": "^2.0.1"
   },
   "devDependencies": {
+    "medium-to-markdown": "0.0.3",
     "prettier": "2.2.1"
   },
   "keywords": [
