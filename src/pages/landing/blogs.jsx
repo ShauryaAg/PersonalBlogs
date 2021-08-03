@@ -3,7 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 
 import { Container } from 'semantic-ui-react'
 
-import styles from '../../static/styles/styles.module.css'
+import styles from '../../assets/styles/styles.module.css'
 
 function Blogs() {
     const data = useStaticQuery(graphql`

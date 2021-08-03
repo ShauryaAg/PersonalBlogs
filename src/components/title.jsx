@@ -1,6 +1,6 @@
 import React from "react"
 
-import styles from '../static/styles/styles.module.css'
+import styles from '../assets/styles/styles.module.css'
 
 const Title = ({ title }) => (
     <div className={`${styles.titleHeader} my-4`}>
