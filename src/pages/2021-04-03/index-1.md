@@ -52,17 +52,25 @@ In order to make the setup easy (on the deployment side), I **containerized** al
 
 Here’s our `**nodeservice/Dockerfile**` for all our NodeJS services.
 
+`gist:ShauryaAg/917d7669bf21864f3b240d03c7eefe4e#`
+
 > Note: The exposed **PORT** should be different for different services
 
 Now, we need to setup **nginx** as our API gateway
 
 For that we need the `**_nginx/Dockerfile_**` and nginx configuration files
 
+`gist:ShauryaAg/55b5e6a153b2f67cc0d642a6c3bddec2`
+
 and the `**_nginx.conf_**` file is as follows
+
+`gist:ShauryaAg/b9140742baf49d245e471b0a5f8392d2`
 
 Now, we have our three containers ready, we just need a docker-compose file to start them all with a single command.
 
 `**_docker-compose.yml_**`
+
+`gist:ShauryaAg/23340e3e5b987f9c12ee779b2504c12c`
 
 Viola! You got all your containers ready, now you just need to deploy those to the server. Package ’em all up and push to a git repository of your choice.
 
@@ -94,9 +102,15 @@ I used `staticfloat/nginx-certbot` docker image to do this stuff for me.
 
 We need to listen on **PORT** **443** for `https` instead of **PORT 80** in case of `http` , and specify **ssl_certificate, ssl_certificate_key** in your `**_nginx.conf_**`**_._**
 
+`gist:ShauryaAg/ebf3d1a2c026a6813cc3cc2508d62f53`
+
 And your `**nginx/Dockerfile**` changes to…
 
+`gist:ShauryaAg/2e8410c4881d61a6922056e2274b85dd`
+
 You also need to make changes in the `**docker-compose.yml**` to map the `letsencrypt/` directory of your container to that of your host machine.
+
+`gist:ShauryaAg/7195980ccf686d7b9ca1d2043d0faef9`
 
 You are all done! Just push these changes to your git repository, and pull them on your instance.
 

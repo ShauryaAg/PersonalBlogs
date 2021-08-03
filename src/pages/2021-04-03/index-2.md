@@ -78,9 +78,13 @@ Phew, we are done with setting up on the AWS side, now let’s get to the good s
 
 Create an `appspec.yml` file, and place it in the root of the directory.
 
+`gist:ShauryaAg/7020611c6e441642e0f4488dc6506a4f`
+
 Let’s setup our CI workflow now. I am using Github Actions for my CI/CD setup.
 
 Create a `.github/workflow/deploy.yml` file
+
+`gist:ShauryaAg/00ddffecb94a8889ca624c4e7a7e6d7b`
 
 > _Note: In the_ `_Configure Secrets_` _step, we are fetching our secrets from a AWS S3 Bucket where we have stored to_ `_.env_` _files, as those can not be stored on the Github repository._
 >

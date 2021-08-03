@@ -61,13 +61,19 @@ Ok, let’s talk about the actual workflow that I follow:
 
 `_<submodule>/.github/workflows/test-and-push.yml_`
 
+`gist:ShauryaAg/c668a761933edfcfcccd42608de76c33`
+
 - The parent repo lists the submodules where the changes were made since the last push and only deploys those services again.
 
 `<parent-repo>/.github/workflows/deploy.yml`
 
+`gist:ShauryaAg/1f260238f05c5e50c0b0e2be8de46adc`
+
 > _This way all the other services keep running without any disturbance, while one of the service is updated._
 
 `<parent-repo>/scripts/deploy.sh`
+
+`gist:ShauryaAg/67e17c3f20dd437c4ddff896b746b5a6`
 
 > _I also created separate_ **Deployment Groups** _for each service of the name:_ `_<service-name>-prod_`_, i.e. for_ `_nodeauth_` _service, I created a_ `_nodeauth-prod_` _deployment group, with rest of the configuration same as we did in the previous part._
 
@@ -75,9 +81,13 @@ We also do need to modify the `appspec.yml` and our scripts.
 
 - Since each service is a separate deployment, we need to put the `appspec.yml` in each service's repository.
 
+`gist:ShauryaAg/a2669b7b92d2a83185c48737eaef8844`
+
 - Since we have decoupled all the services from each other, we no longer run them using `sudo docker-compose up`, each service has to be started individually.
 
 `<submodule>/scripts/start_app.sh`
+
+`gist:ShauryaAg/8df11d84dcc7df2ae0f8f9b8ca286b6a`
 
 - I wrote a bit complex script so that we can use the same set of scripts in all our services instead of writing them again and again as new services are added.
 - The scripts can also be added as a git submodule to all the services’ repositories, which makes it easier to maintain (but they weren’t in my setup at the moment of writing this blog).
