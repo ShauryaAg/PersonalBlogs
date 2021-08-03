@@ -1,6 +1,6 @@
 ---
 path: "/intro-git"
-date: "2019-07-07"
+date: "2019-09-12"
 title: "Introduction to Git"
 author: "ShauryaAg"
 featured: True

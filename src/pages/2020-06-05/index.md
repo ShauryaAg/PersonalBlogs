@@ -1,6 +1,6 @@
 ---
 path: "/overlay-probs"
-date: "2020-07-07"
+date: "2020-06-05"
 title: "How to approach image overlay problems"
 author: "ShauryaAg"
 featured: True
