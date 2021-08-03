@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import { Image } from "semantic-ui-react"
 
-import Logo from '../images/logo.svg'
+import Logo from '../images/logo.png'
 
 const Header = ({ siteTitle }) => (
   <header
